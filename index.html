@@ -105,6 +105,44 @@
       margin-bottom: 28px;
     }
 
+    /* ── Personal note ── */
+    .personal-note {
+      border: 1px solid #bbb;
+      border-left: 4px solid #111;
+      background: rgba(0, 0, 0, 0.025);
+      padding: 28px 36px 20px;
+      margin-bottom: 32px;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #222;
+    }
+
+    .personal-note p {
+      margin: 0 0 12px;
+    }
+
+    .personal-note p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .personal-note-label {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 16px !important;
+    }
+
+    .personal-note-sig {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-style: italic;
+      color: #111;
+      margin-top: 16px !important;
+    }
+
     /* ── Section label ── */
     .section-label {
       display: block;
@@ -342,6 +380,146 @@
       letter-spacing: 1px;
     }
 
+    /* ── News ticker ── */
+    .ticker-bar {
+      background: #111;
+      color: #f4ede0;
+      overflow: hidden;
+      padding: 7px 0;
+      border-bottom: 1px solid #333;
+    }
+
+    .ticker-track {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: ticker-scroll 55s linear infinite;
+    }
+
+    .ticker-track:hover { animation-play-state: paused; }
+
+    .ticker-item {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      padding: 0 48px;
+      color: #ddd;
+    }
+
+    .ticker-item::after {
+      content: ' ✦';
+      color: #888;
+      margin-left: 48px;
+    }
+
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── Candle section ── */
+    .candle-section {
+      text-align: center;
+      padding: 28px 0 8px;
+      margin-top: 8px;
+      border-top: 1px solid #ccc;
+    }
+
+    .candle-section-label {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 14px;
+    }
+
+    .candle-btn {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: none;
+      border: 1px solid #999;
+      color: #444;
+      padding: 9px 22px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .candle-btn:hover { background: #111; color: #f4ede0; border-color: #111; }
+
+    .candle-count {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 11px;
+      color: #999;
+      letter-spacing: 1px;
+      margin: 10px 0 14px;
+      min-height: 18px;
+    }
+
+    .candle-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 8px;
+      min-height: 20px;
+      padding: 4px 0;
+    }
+
+    .candle-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      animation: candle-appear 0.3s ease;
+    }
+
+    @keyframes candle-appear {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .candle-flame {
+      width: 7px;
+      height: 13px;
+      background: radial-gradient(ellipse at 50% 100%, #fff 0%, #ffe066 35%, #ff9900 75%, transparent 100%);
+      border-radius: 50% 50% 30% 30% / 60% 60% 40% 40%;
+      animation: flicker 1.4s ease-in-out infinite alternate;
+      transform-origin: bottom center;
+    }
+
+    .candle-wick {
+      width: 1px;
+      height: 5px;
+      background: #555;
+    }
+
+    .candle-body {
+      width: 12px;
+      height: 36px;
+      background: linear-gradient(to right, #f0e8d8 0%, #e0d4be 50%, #c8bca8 100%);
+      border: 1px solid #bbb;
+      border-radius: 1px;
+    }
+
+    .candle-drip {
+      width: 6px;
+      height: 4px;
+      background: #e0d4be;
+      border-radius: 0 0 3px 3px;
+      margin-top: -1px;
+    }
+
+    @keyframes flicker {
+      0%   { transform: scaleX(1)    scaleY(1)    rotate(-3deg); opacity: 0.9; }
+      30%  { transform: scaleX(0.88) scaleY(1.12) rotate(2deg);  opacity: 1;   }
+      60%  { transform: scaleX(1.1)  scaleY(0.92) rotate(-1deg); opacity: 0.95;}
+      100% { transform: scaleX(0.95) scaleY(1.08) rotate(-2deg); opacity: 1;   }
+    }
+
+    /* ── Typewriter ── */
+    .personal-note.typing p { opacity: 0; }
+    .personal-note.typing p.typed { opacity: 1; }
+
     /* ── Responsive ── */
     @media (max-width: 680px) {
       body { padding: 20px 12px 40px; }
@@ -362,6 +540,30 @@
     <!-- Mourning banner above newspaper -->
     <div class="mourning-banner">✦ &nbsp;&nbsp; In Memoriam &nbsp;&nbsp; ✦</div>
 
+    <!-- News ticker -->
+    <div class="ticker-bar" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item">BREAKING: Local IT Support professional departs after 5 years</span>
+        <span class="ticker-item">Sources confirm work inbox has been left on read</span>
+        <span class="ticker-item">Printer status: still unclear</span>
+        <span class="ticker-item">Institutional knowledge confirmed missing — last seen in a handover document</span>
+        <span class="ticker-item">Recurring Friday wrap-up to continue for reasons no one can fully explain</span>
+        <span class="ticker-item">Google Chat thread enters unprecedented period of quiet</span>
+        <span class="ticker-item">The stapler has not been recovered. Authorities not notified.</span>
+        <span class="ticker-item">Nocco supply chain reports no disruption</span>
+        <span class="ticker-item">Documentation described as "alarmingly thorough" by multiple sources</span>
+        <span class="ticker-item">BREAKING: Local IT Support professional departs after 5 years</span>
+        <span class="ticker-item">Sources confirm work inbox has been left on read</span>
+        <span class="ticker-item">Printer status: still unclear</span>
+        <span class="ticker-item">Institutional knowledge confirmed missing — last seen in a handover document</span>
+        <span class="ticker-item">Recurring Friday wrap-up to continue for reasons no one can fully explain</span>
+        <span class="ticker-item">Google Chat thread enters unprecedented period of quiet</span>
+        <span class="ticker-item">The stapler has not been recovered. Authorities not notified.</span>
+        <span class="ticker-item">Nocco supply chain reports no disruption</span>
+        <span class="ticker-item">Documentation described as "alarmingly thorough" by multiple sources</span>
+      </div>
+    </div>
+
     <div class="newspaper">
       <div class="content">
 
@@ -381,14 +583,7 @@
         <!-- Section label -->
         <span class="section-label">Obituary</span>
 
-        <!-- Portrait -->
-        <div class="portrait-wrap">
-          <div class="portrait">
-            <p class="portrait-label">In<br>Memoriam</p>
-            <p class="portrait-ornament">✦</p>
-            <p class="portrait-years">2021<br>—<br>2026</p>
-          </div>
-        </div>
+
 
         <!-- Headline -->
         <h2 class="obit-headline">Jesper Vestin's<br>Employment</h2>
@@ -397,37 +592,48 @@
 
         <hr class="rule-double">
 
+        <!-- Personal message -->
+        <div class="personal-note">
+          <p class="personal-note-label">A Message from Jesper</p>
+          <p>Before you read what follows, I want to say something directly.</p>
+          <p>I genuinely enjoyed working with you. All of you. Most of you. The vast majority of you, and I think we both know which side of that line you're on.</p>
+          <p>You were the reason I never dreaded coming in. On the days that were long, complicated, or just a bit much, it was the people around me that made them worth showing up for. From the jokes in the office to the laughs we somehow managed after a hectic hotel opening, you made the hard parts enjoyable, the frustrating parts manageable, and the good moments genuinely good.</p>
+          <p>This is the end of my Strawberry Journey.</p>
+          <p>For now.</p>
+          <p class="personal-note-sig">Jesper</p>
+        </div>
+
         <!-- Obituary body -->
         <div class="obit-body">
 
           <p class="lead">After five years of distinguished, occasionally heroic, and largely unsung service, the employment of Jesper Vestin departed this world peacefully in 2026, surrounded by half-finished Nocco cans, an inbox it had finally stopped apologising for, and the quiet satisfaction of a desk cleared with something resembling dignity.</p>
 
-          <p>Born of necessity in 2021, the employment took its first tentative steps in a shared workspace and quickly established itself as a dependable, good-natured presence. The kind that showed up on time, remembered meeting agendas, fixed things that were "not its responsibility," and never once made a scene about the printer.</p>
+          <p>Born of necessity in 2021, the employment quickly established itself as the kind of presence that made an entire company function more smoothly than it had any right to. As IT Support, it travelled, translated, and troubleshot its way across departments and head offices alike, becoming the first person most people called when something went wrong, and, more importantly, the person they called when they were not quite sure who else to call.</p>
 
-          <p><em>(Though it had reasons.)</em></p>
+          <p>Over the years it became something more than a support function. A translator between "it doesn't work" and "it works now." A calm voice in rooms where panic was the default setting. The kind of colleague who showed up in person, fixed the thing, explained the fix in a way that actually made sense, and left before anyone fully appreciated how serious the problem had been.</p>
 
-          <p>Over the years, it evolved, quietly but persistently, into something more than a role. A builder. A fixer. A translator between "it doesn't work" and "it works now." A steady hand in environments that were, at times, anything but.</p>
+          <p><em>(This was, in retrospect, a choice.)</em></p>
 
-          <p>It endured countless software migrations, multiple reorganisations, and enough "quick syncs" to fill several lifetimes. It answered the 07:43 Google Chat message. It joined the Friday wrap-up it suspected no one truly needed. It shipped solutions, dashboards, and ideas, some small, some quietly transformative.</p>
+          <p>It endured countless software migrations, multiple reorganisations, and enough "quick syncs" to fill several lifetimes. It answered the 07:43 Google Chat message. It joined the Friday wrap-up it suspected no one truly needed. And it documented things. Properly. In full sentences. A practice so rare in its field that colleagues occasionally printed the documentation and kept it.</p>
 
-          <p>And, on most occasions, it was proud of them.</p>
+          <p>And, on most occasions, it was proud of that.</p>
 
           <div class="pull-quote">
             "It never took all of its allocated vacation days.<br>
             <em>Not once. Not even close.</em>"
           </div>
 
-          <p>In its later years, the employment matured considerably, growing more deliberate in its opinions, more selective with its urgency, and increasingly skilled at identifying which fires required immediate action, and which were best observed calmly, with coffee in hand.</p>
+          <p>In its later years, the employment grew more deliberate in its assessments, more precise with its words, and increasingly skilled at delivering unwelcome news in a tone so agreeably neutral that the full weight of the message only landed several minutes later, over coffee, when it was too late to argue.</p>
 
-          <p>Colleagues remember it as thorough, occasionally dry, and in possession of a dangerously accurate memory, particularly for things said in meetings and later&hellip; revised. It gave generously of its time, its patience, and its ability to make complex things feel simple. It asked for less than it was owed.</p>
+          <p>Colleagues remember it as thorough, direct in a way that occasionally required a brief moment of adjustment, and possessed of a gift for making complicated things feel manageable. It was the person people connected with early. Not because it sought it out, but because it was genuinely, consistently, and sometimes exhaustingly helpful.</p>
 
           <p>In its final weeks, those closest to the employment noted a certain serenity. A lightness. Tasks were closed. Systems were handed over. Documentation, against all odds, was written.</p>
 
           <p>And somewhere in that process, a quiet shift occurred. What had once been a role became a chapter.</p>
 
-          <p>It is survived by unfinished ideas, improved systems, and a noticeable absence in Google Chat threads where it once replied first.</p>
+          <p>It is survived by improved systems, fixed things that no longer need fixing, and a noticeable absence in Google Chat threads where it once replied first.</p>
 
-          <p>Also, one stapler.<br>Its whereabouts remain a matter of personal conscience.</p>
+          <p>Also, one charger.<br>Its whereabouts remain a matter of personal conscience.</p>
 
         </div>
 
@@ -461,6 +667,14 @@
           </p>
         </div>
 
+        <!-- Candle section -->
+        <div class="candle-section">
+          <p class="candle-section-label">Light a Candle</p>
+          <button class="candle-btn" onclick="lightCandle()">✦ Light a Candle</button>
+          <p class="candle-count" id="candle-count"></p>
+          <div class="candle-area" id="candle-area"></div>
+        </div>
+
         <!-- Footer -->
         <footer class="paper-footer">
           The Professional Record &nbsp;·&nbsp; Farewell Edition &nbsp;·&nbsp; Not for redistribution after reading
@@ -471,6 +685,79 @@
 
 
   </div>
+
+  <script>
+    // ── Candle ──────────────────────────────────────────────
+    let candleCount = 0;
+    const MAX_CANDLES = 30;
+
+    function lightCandle() {
+      if (candleCount >= MAX_CANDLES) return;
+      candleCount++;
+
+      const area = document.getElementById('candle-area');
+      const countEl = document.getElementById('candle-count');
+
+      const wrap = document.createElement('div');
+      wrap.className = 'candle-wrap';
+      wrap.innerHTML = `
+        <div class="candle-flame" style="animation-delay:${Math.random() * -2}s; animation-duration:${1.1 + Math.random() * 0.8}s"></div>
+        <div class="candle-wick"></div>
+        <div class="candle-body"></div>
+        <div class="candle-drip"></div>`;
+      area.appendChild(wrap);
+
+      const messages = [
+        '', '', '', '',
+        `${candleCount} candles burning`,
+        `${candleCount} candles burning`,
+        `${candleCount} candles burning`,
+        candleCount >= MAX_CANDLES ? 'That\'s enough candles. He would\'ve said the same.' : `${candleCount} candles burning`
+      ];
+      countEl.textContent = candleCount === 1
+        ? 'One candle burning'
+        : candleCount >= MAX_CANDLES
+          ? "That's enough candles. He would've said the same."
+          : `${candleCount} candles burning`;
+    }
+
+    // ── Typewriter ──────────────────────────────────────────
+    (function () {
+      const note = document.querySelector('.personal-note');
+      if (!note) return;
+
+      const paras = Array.from(note.querySelectorAll('p'));
+      const texts = paras.map(p => p.textContent.trim());
+      paras.forEach(p => { p.textContent = ''; });
+
+      let triggered = false;
+
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !triggered) {
+          triggered = true;
+          observer.disconnect();
+          typeNext(paras, texts, 0);
+        }
+      }, { threshold: 0.4 });
+
+      observer.observe(note);
+
+      function typeNext(paras, texts, idx) {
+        if (idx >= paras.length) return;
+        const p = paras[idx];
+        const text = texts[idx];
+        let i = 0;
+        const speed = p.classList.contains('personal-note-sig') ? 80 : 22;
+        const interval = setInterval(() => {
+          p.textContent += text[i++];
+          if (i >= text.length) {
+            clearInterval(interval);
+            setTimeout(() => typeNext(paras, texts, idx + 1), idx === paras.length - 2 ? 400 : 120);
+          }
+        }, speed);
+      }
+    })();
+  </script>
 
 </body>
 </html>
