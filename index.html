@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In Memoriam: The Employment of Jesper Vestin</title>
+  <meta name="description" content="A memorial page for the employment of Jesper Vestin. Five years. Remembered fondly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,600;1,400&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #1c1c1c;
+      padding: 48px 20px 64px;
+      min-height: 100vh;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    /* ── Outer newspaper border ── */
+    .newspaper {
+      background-color: #f4ede0;
+      border: 10px solid #111;
+      position: relative;
+    }
+
+    /* Inner decorative border */
+    .newspaper::before {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 7px;
+      right: 7px;
+      bottom: 7px;
+      border: 1px solid #555;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── Mourning banner ── */
+    .mourning-banner {
+      background: #111;
+      color: #f4ede0;
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+    }
+
+    /* ── Inner content padding ── */
+    .content {
+      padding: 36px 60px 56px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── Masthead ── */
+    .masthead {
+      text-align: center;
+      padding-bottom: 14px;
+      border-bottom: 3px double #111;
+      margin-bottom: 0;
+    }
+
+    .newspaper-name {
+      font-family: 'UnifrakturMaguntia', serif;
+      font-size: 64px;
+      color: #111;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .newspaper-tagline {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #777;
+    }
+
+    /* ── Edition bar ── */
+    .edition-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #666;
+      padding: 7px 0;
+      border-bottom: 1px solid #111;
+      margin-bottom: 28px;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      display: block;
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #111;
+      border: 1px solid #111;
+      padding: 5px 18px;
+      margin: 0 auto 20px;
+      width: fit-content;
+    }
+
+    /* ── Portrait ── */
+    .portrait-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .portrait {
+      width: 112px;
+      height: 136px;
+      background: #111;
+      border: 2px solid #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px;
+    }
+
+    .portrait-label {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 8.5px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #f4ede0;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .portrait-ornament {
+      font-size: 18px;
+      color: #888;
+      line-height: 1;
+    }
+
+    .portrait-years {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 10px;
+      color: #aaa;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── Headline ── */
+    .obit-headline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 54px;
+      font-weight: 900;
+      text-align: center;
+      color: #111;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .obit-subhead {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-style: italic;
+      font-weight: 400;
+      text-align: center;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .dates-line {
+      text-align: center;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    /* ── Rules ── */
+    .rule-double {
+      border: none;
+      border-top: 3px double #111;
+      margin: 16px 0 20px;
+    }
+
+    .rule-thin {
+      border: none;
+      border-top: 1px solid #bbb;
+      margin: 20px 0;
+    }
+
+    .ornament-row {
+      text-align: center;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 14px;
+      color: #999;
+      margin: 4px 0;
+      letter-spacing: 8px;
+    }
+
+    /* ── Two-column body ── */
+    .obit-body {
+      column-count: 2;
+      column-gap: 44px;
+      column-rule: 1px solid #ccc;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #222;
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 8px;
+    }
+
+    .obit-body p {
+      margin-bottom: 14px;
+    }
+
+    /* Drop cap on first paragraph */
+    .obit-body p.lead::first-letter {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 0.72;
+      float: left;
+      margin: 10px 6px 0 0;
+      color: #111;
+    }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      column-span: all;
+      border-top: 2px solid #111;
+      border-bottom: 2px solid #111;
+      padding: 14px 48px;
+      margin: 4px 0 16px;
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-style: italic;
+      color: #111;
+      line-height: 1.5;
+    }
+
+    /* ── Survived by ── */
+    .survived-section {
+      border: 1px solid #aaa;
+      padding: 22px 28px;
+      margin: 28px 0;
+      background: rgba(0, 0, 0, 0.025);
+    }
+
+    .survived-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #111;
+      margin-bottom: 12px;
+    }
+
+    .survived-list {
+      list-style: none;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 14px;
+      line-height: 1.9;
+      color: #333;
+      columns: 2;
+      column-gap: 40px;
+    }
+
+    .survived-list li::before {
+      content: '† ';
+      color: #888;
+    }
+
+    /* ── Notice box ── */
+    .notice-box {
+      background: #111;
+      padding: 22px 28px;
+      margin-top: 28px;
+    }
+
+    .notice-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #f4ede0;
+      margin-bottom: 10px;
+    }
+
+    .notice-text {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 14px;
+      line-height: 1.75;
+      color: #ccc;
+    }
+
+    /* ── Footer ── */
+    .paper-footer {
+      border-top: 3px double #111;
+      margin-top: 36px;
+      padding-top: 14px;
+      text-align: center;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 10px;
+      color: #999;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ── Page-level caption ── */
+    .page-caption {
+      text-align: center;
+      margin-top: 20px;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 11px;
+      color: #555;
+      letter-spacing: 1px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      body { padding: 20px 12px 40px; }
+      .content { padding: 24px 24px 40px; }
+      .newspaper-name { font-size: 40px; }
+      .obit-headline { font-size: 34px; }
+      .obit-body { column-count: 1; }
+      .survived-list { columns: 1; }
+      .pull-quote { padding: 12px 16px; font-size: 16px; }
+      .edition-bar { flex-direction: column; gap: 4px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Mourning banner above newspaper -->
+    <div class="mourning-banner">✦ &nbsp;&nbsp; In Memoriam &nbsp;&nbsp; ✦</div>
+
+    <div class="newspaper">
+      <div class="content">
+
+        <!-- Masthead -->
+        <header class="masthead">
+          <h1 class="newspaper-name">The Professional Record</h1>
+          <p class="newspaper-tagline">All the employment news that is fit to mourn</p>
+        </header>
+
+        <!-- Edition bar -->
+        <div class="edition-bar">
+          <span>Monday, 16 March 2026</span>
+          <span>Farewell Edition &nbsp;·&nbsp; Vol. V, No. Final</span>
+          <span>Est. 2021</span>
+        </div>
+
+        <!-- Section label -->
+        <span class="section-label">Obituary</span>
+
+        <!-- Portrait -->
+        <div class="portrait-wrap">
+          <div class="portrait">
+            <p class="portrait-label">In<br>Memoriam</p>
+            <p class="portrait-ornament">✦</p>
+            <p class="portrait-years">2021<br>—<br>2026</p>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h2 class="obit-headline">Jesper Vestin's<br>Employment</h2>
+        <p class="obit-subhead">A Dedicated Servant of the Working World</p>
+        <p class="dates-line">2021 &nbsp;—&nbsp; 2026</p>
+
+        <hr class="rule-double">
+
+        <!-- Obituary body -->
+        <div class="obit-body">
+
+          <p class="lead">After five years of distinguished, occasionally heroic, and largely unsung service, the employment of Jesper Vestin departed this world peacefully in 2026, surrounded by half-finished Nocco cans, an inbox it had finally stopped apologising for, and the quiet satisfaction of a desk cleared with something resembling dignity.</p>
+
+          <p>Born of necessity in 2021, the employment took its first tentative steps in a shared workspace and quickly established itself as a dependable, good-natured presence. The kind that showed up on time, remembered meeting agendas, fixed things that were "not its responsibility," and never once made a scene about the printer.</p>
+
+          <p><em>(Though it had reasons.)</em></p>
+
+          <p>Over the years, it evolved, quietly but persistently, into something more than a role. A builder. A fixer. A translator between "it doesn't work" and "it works now." A steady hand in environments that were, at times, anything but.</p>
+
+          <p>It endured countless software migrations, multiple reorganisations, and enough "quick syncs" to fill several lifetimes. It answered the 07:43 Google Chat message. It joined the Friday wrap-up it suspected no one truly needed. It shipped solutions, dashboards, and ideas, some small, some quietly transformative.</p>
+
+          <p>And, on most occasions, it was proud of them.</p>
+
+          <div class="pull-quote">
+            "It never took all of its allocated vacation days.<br>
+            <em>Not once. Not even close.</em>"
+          </div>
+
+          <p>In its later years, the employment matured considerably, growing more deliberate in its opinions, more selective with its urgency, and increasingly skilled at identifying which fires required immediate action, and which were best observed calmly, with coffee in hand.</p>
+
+          <p>Colleagues remember it as thorough, occasionally dry, and in possession of a dangerously accurate memory, particularly for things said in meetings and later&hellip; revised. It gave generously of its time, its patience, and its ability to make complex things feel simple. It asked for less than it was owed.</p>
+
+          <p>In its final weeks, those closest to the employment noted a certain serenity. A lightness. Tasks were closed. Systems were handed over. Documentation, against all odds, was written.</p>
+
+          <p>And somewhere in that process, a quiet shift occurred. What had once been a role became a chapter.</p>
+
+          <p>It is survived by unfinished ideas, improved systems, and a noticeable absence in Google Chat threads where it once replied first.</p>
+
+          <p>Also, one stapler.<br>Its whereabouts remain a matter of personal conscience.</p>
+
+        </div>
+
+        <hr class="rule-thin">
+        <p class="ornament-row">✦ &nbsp; ✦ &nbsp; ✦</p>
+        <hr class="rule-thin">
+
+        <!-- Survived by -->
+        <div class="survived-section">
+          <p class="survived-title">Survived By</p>
+          <ul class="survived-list">
+            <li>A LinkedIn profile, recently updated and suspiciously optimistic</li>
+            <li>A handover document of almost alarming thoroughness</li>
+            <li>The institutional memory of an entire department, now distributed across no one in particular</li>
+            <li>Several colleagues who will, in approximately six months, finally understand what it was doing</li>
+            <li>A recurring calendar invite it will no longer attend, but which will persist regardless</li>
+            <li>A Google Chat thread, now noticeably quieter</li>
+            <li>An out-of-office message, composed with care and a hint of theatrical flair</li>
+            <li>One mug, location unknown, presumed gone</li>
+          </ul>
+        </div>
+
+        <!-- Notice box -->
+        <div class="notice-box">
+          <p class="notice-title">Notice</p>
+          <p class="notice-text">
+            No formal services will be held, as the deceased would have found them unnecessary
+            and slightly awkward. In lieu of flowers, mourners are asked to update their contact
+            information and resist the urge to send a final "just checking in" message.
+            The work inbox has been left on read. It will stay that way.
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="paper-footer">
+          The Professional Record &nbsp;·&nbsp; Farewell Edition &nbsp;·&nbsp; Not for redistribution after reading
+        </footer>
+
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+</html>
